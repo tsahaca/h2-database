@@ -1,0 +1,9 @@
+CREATE TABLE NEW_HIRE AS SELECT * FROM CSVREAD('new-hire-csv.csv');
+
+CALL CSVWRITE('new-hire-test.csv', 'SELECT * FROM NEW_HIRE');
+
+CREATE TABLE HR_DATA_SAILPOINT
+AS
+SELECT * FROM CSVREAD('hr-data-sailpoint.txt', null, 'charset=UTF-8 fieldSeparator=|');
+
+SELECT * FROM  HR_DATA_SAILPOINT;
